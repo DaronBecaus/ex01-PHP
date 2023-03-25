@@ -27,7 +27,7 @@ class Carros
         $this->marca = $list['marca'];
         $this->modelo = $list['modelo'];
         $this->ano = $list['ano'];
-        $this->ano = $list['imagem'];
+        $this->imagem = $list['imagem'];
     }
 
     public function insert()
