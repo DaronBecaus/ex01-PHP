@@ -9,13 +9,15 @@
 </head>
 
 <body>
-    <form action="add_controller.php" method="post">
+    <form action="add_controller.php" method="post" enctype="multipart/form-data">
         <label for="marca">Marca:</label>
         <input type="text" name="marca" id="marca">
         <label for="modelo">Modelo:</label>
         <input type="text" name="modelo" id="modelo">
         <label for="ano">Ano:</label>
         <input type="number" name="ano" id="ano">
+        <label for="imagem">Selecione uma imagem:</label>
+        <input type="file" name="imagem" id="imagem">
         <input type="submit" value="Cadastrar Novo">
     </form>
 </body>

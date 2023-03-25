@@ -19,7 +19,7 @@ try {
 </head>
 
 <body>
-    <form action="edite_controller.php" method="post">
+    <form action="edite_controller.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<? $carro->$id_carro; ?>">
         <label for="marca">Marca:</label>
         <input type="text" name="marca" id="marca" value="<?= $carro->marca; ?>">
@@ -27,6 +27,8 @@ try {
         <input type="number" name="modelo" id="modelo" value="<?= $carro->modelo; ?>">
         <label for="ano">Ano:</label>
         <input type="number" name="ano" id="ano" value="<?= $carro->ano; ?>">
+        <label for="imagem">Selecione uma nova imagem:</label>
+        <input type="file" name="imagem" id="imagem" value="<?= $carro->imagem; ?>">
         <input type="submit" value="Atualizar">
     </form>
 </body>

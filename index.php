@@ -6,11 +6,11 @@
     echo "conexão feita com sucesso...";
 } catch (PDOException $e) {
     echo $e->getMessage();
-}
+} */
 
-echo "<br>";
+// echo "<br>";
 
-try {
+/* try {
     $conn = new  PDO("mysql:host=localhost;dbname=exphp", "root", "");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "CREATE TABLE IF NOT EXISTS carros (
@@ -51,6 +51,7 @@ try {
             <th>Marca</th>
             <th>Modelo</th>
             <th>Ano</th>
+            <th>imagem</th>
             <th colspan="2">
                 <a href="add_new.php" style="color:green;">Adicionar Novo</a>
             </th>
@@ -61,6 +62,7 @@ try {
                 <td><?= $p['marca']; ?></td>
                 <td><?= $p['modelo']; ?></td>
                 <td><?= $p['ano']; ?></td>
+                <td><img src="data:image/jpg;charset=utf8;base64, <?= base64_encode($p['imagem']); ?>" width="200px"></td>
                 <td class="icon edit cont">
                     <a href="edite.php?id=<?= $p['id_carro']; ?>" style="color:blue;">Editar</a>
                 </td>
