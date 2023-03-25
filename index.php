@@ -17,7 +17,8 @@
         id_carro INT PRIMARY KEY AUTO_INCREMENT,
         marca varchar(255) NOT null,
         modelo varchar(255) NOT null,
-        ano INT
+        ano INT,
+        imagem varchar(255) NOT null
     )";
     $conn->exec($sql);
     echo "tabela criada com sucesso...";
@@ -51,7 +52,7 @@ try {
             <th>Marca</th>
             <th>Modelo</th>
             <th>Ano</th>
-            <th>imagem</th>
+            <th>Imagem</th>
             <th colspan="2">
                 <a href="add_new.php" style="color:green;">Adicionar Novo</a>
             </th>
