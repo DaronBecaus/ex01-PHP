@@ -20,11 +20,11 @@ try {
 
 <body>
     <form action="edite_controller.php" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<? $carro->$id_carro; ?>">
+        <input type="hidden" name="id" value="<?= $id_carro ?>">
         <label for="marca">Marca:</label>
         <input type="text" name="marca" id="marca" value="<?= $carro->marca; ?>">
         <label for="modelo">Modelo:</label>
-        <input type="number" name="modelo" id="modelo" value="<?= $carro->modelo; ?>">
+        <input type="text" name="modelo" id="modelo" value="<?= $carro->modelo; ?>">
         <label for="ano">Ano:</label>
         <input type="number" name="ano" id="ano" value="<?= $carro->ano; ?>">
         <label for="imagem">Selecione uma nova imagem:</label>

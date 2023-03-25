@@ -14,7 +14,7 @@ try {
     $carro->marca = $marca;
     $carro->modelo = $modelo;
     $carro->ano = $ano;
-    $carros->imagem = $imagem;
+    $carro->imagem = $imagem;
     $carro->update();
     header('location: index.php');
 } catch (Exception $e) {
