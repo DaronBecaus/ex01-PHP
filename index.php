@@ -51,7 +51,9 @@ try {
             <th>Marca</th>
             <th>Modelo</th>
             <th>Ano</th>
-            <th>Adicionar Novo</th>
+            <th colspan="2">
+                <a href="add_new.php" style="color:green;">Adicionar Novo</a>
+            </th>
         </tr>
         <?php foreach ($list as $p) : ?>
             <tr>
@@ -60,7 +62,7 @@ try {
                 <td><?= $p['modelo']; ?></td>
                 <td><?= $p['ano']; ?></td>
                 <td class="icon edit cont">
-                    <a href="edit.php?id=<?= $p['id_carro']; ?>" style="color:blue;">Editar</a>
+                    <a href="edite.php?id=<?= $p['id_carro']; ?>" style="color:blue;">Editar</a>
                 </td>
                 <td class="icon delete cont">
                     <a href="delete.php?id=<?= $p['id_carro']; ?>" style="color:red;">Deletar</a>
