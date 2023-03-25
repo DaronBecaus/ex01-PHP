@@ -27,7 +27,7 @@ try {
 
 require_once "carros.php";
 try {
-    $lista = Carros::list();
+    $list = Carros::list();
 } catch (Exception $e) {
     echo $e->getMessage();
 }
