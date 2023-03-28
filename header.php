@@ -29,4 +29,9 @@ try {
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <nav>
+            <a href="index.php">Tabela de Carros</a>
+            <a href="galeria.php">Galeria de Carros</a>
+        </nav>
+    </header>

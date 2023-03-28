@@ -54,7 +54,7 @@ class Carros
         return $list;
     }
 
-    public function update()
+    public function editarComImagem()
     {
         $sql = "UPDATE carros SET marca = :marca, modelo = :modelo, ano = :ano, imagem = :imagem, info = :info WHERE id_carro = :id_carro";
         $connection = Connection::connect();
@@ -63,6 +63,19 @@ class Carros
         $stmt->bindValue(":modelo", $this->modelo);
         $stmt->bindValue(":ano", $this->ano);
         $stmt->bindValue(":imagem", $this->imagem);
+        $stmt->bindValue(":info", $this->info);
+        $stmt->bindValue(":id_carro", $this->id_carro);
+        $stmt->execute();
+    }
+
+    public function editarSemImagem()
+    {
+        $sql = "UPDATE carros SET marca = :marca, modelo = :modelo, ano = :ano, info = :info WHERE id_carro = :id_carro";
+        $connection = Connection::connect();
+        $stmt = $connection->prepare($sql);
+        $stmt->bindValue(":marca", $this->marca);
+        $stmt->bindValue(":modelo", $this->modelo);
+        $stmt->bindValue(":ano", $this->ano);
         $stmt->bindValue(":info", $this->info);
         $stmt->bindValue(":id_carro", $this->id_carro);
         $stmt->execute();

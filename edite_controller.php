@@ -10,15 +10,18 @@ if (!empty($_FILES['imagem']['tmp_name'])) {
     $imagem = file_get_contents($_FILES['imagem']['tmp_name']);
 }
 
-
 try {
     $carro = new Carros($id_carro);
     $carro->marca = $marca;
     $carro->modelo = $modelo;
     $carro->ano = $ano;
     $carro->info = $info;
-    $carro->imagem = $imagem;
-    $carro->update();
+    if ($imagem) {
+        $carro->imagem = $imagem;
+        $carro->editarComImagem();
+    } else {
+        $carro->editarSemImagem();
+    }
     header('location: index.php');
 } catch (Exception $e) {
     echo $e->getMessage();

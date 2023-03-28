@@ -1,13 +1,23 @@
-const openModalButton = document.querySelector("#open-add");
-const closeModalButton = document.querySelector("#close-add");
-const modal = document.querySelector("#modal");
-const fade = document.querySelector("#fade");
+var imagem = document.getElementById("imagem");
+var preview = document.getElementById("preview");
 
-const toggleModa = () => {
-  modal.classList.toggle("hide");
-  fade.classList.toggle("hide");
-};
+imagem.addEventListener("change", function () {
+  preview.innerHTML = "";
+  var files = this.files;
 
-[openModalButton, closeModalButton, fade].forEach((el) => {
-  el.addEventListener("click", () => toggleModal());
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+
+    if (file.type.match("image.*")) {
+      var reader = new FileReader();
+
+      reader.addEventListener("load", function (event) {
+        var img = document.createElement("img");
+        img.src = event.target.result;
+        preview.appendChild(img).style.scale = "0.5";
+      });
+
+      reader.readAsDataURL(file);
+    }
+  }
 });
