@@ -36,7 +36,7 @@ try {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-Br">
 
 <head>
     <meta charset="UTF-8">
