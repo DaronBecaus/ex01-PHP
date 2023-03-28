@@ -28,7 +28,7 @@ button {
   background-color: #007bff;
 }
 
-button:hover, {
+button:hover {
   opacity: 1;
 }
 
@@ -83,4 +83,12 @@ button:hover, {
 
 #modal.hide {
   top: 0;
+}
+.car {
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+}
+.car img{
+  border-radius: 0.375rem;
 }

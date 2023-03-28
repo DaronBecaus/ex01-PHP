@@ -28,8 +28,10 @@ try {
         <label for="ano">Ano:</label>
         <input type="number" name="ano" id="ano" value="<?= $carro->ano; ?>">
         <label for="imagem">Selecione uma nova imagem:</label>
-        <img src="data:image/svg+xml;charset=utf8;base64, <?= base64_encode($carro->imagem); ?>" width="200px">
+        <img src="data:image/wedp;charset=utf8;base64, <?= base64_encode($carro->imagem); ?>" width="200px">
         <input type="file" name="imagem" id="imagem">
+        <label for="info">Escreva uma descrição do carro incerido</label>
+        <input type="text" name="info" id="info" value="<?= $carro->info; ?>">
         <input type="submit" value="Atualizar">
     </form>
 </body>

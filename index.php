@@ -27,6 +27,8 @@ require_once "header.php" ?>
                             <input type="number" name="ano" id="ano">
                             <label for="imagem">Selecione uma imagem:</label>
                             <input type="file" name="imagem" id="imagem">
+                            <label for="info">Escreva uma descrição do carro incerido</label>
+                            <input type="text" name="info" id="info">
                             <input type="submit" value="Cadastrar Novo">
                         </form>
                     </div>
@@ -39,16 +41,35 @@ require_once "header.php" ?>
                 <td><?= $p['marca']; ?></td>
                 <td><?= $p['modelo']; ?></td>
                 <td><?= $p['ano']; ?></td>
-                <td><img src="data:image/svg+xml;charset=utf8;base64, <?= base64_encode($p['imagem']); ?>" width="200px"></td>
+                <td><img src="data:image/wedp;charset=utf8;base64, <?= base64_encode($p['imagem']); ?>" width="200px"></td>
+                <td><?= $p['info']; ?></td>
                 <td class="icon edit cont">
-                    <a href="edite.php?id=<?= $p['id_carro']; ?>">Editar</a>
+                    <a href="edite.php?id=<?= $p['id_carro']; ?>" class="btn btn-primary">Editar</a>
                 </td>
                 <td class="icon delete cont">
-                    <a href="delete.php?id=<?= $p['id_carro']; ?>" style="color:red;">Deletar</a>
+                    <a href="delete.php?id=<?= $p['id_carro']; ?>" class="btn btn-danger">Deletar</a>
                 </td>
             </tr>
         <?php endforeach; ?>
     </table>
+    <div class="car">
+        <?php foreach ($list as $p) : ?>
+            <div class="card" style="width: 18rem;">
+                <img src="data:image/wedp;charset=utf8;base64, <?= base64_encode($p['imagem']); ?>">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $p['modelo']; ?></h5>
+                    <p class="card-text">
+                        <td><?= $p['info']; ?></td>
+                    </p>
+                    <div>
+                        <a href="edite.php?id=<?= $p['id_carro']; ?>" class="btn btn-primary">Editar</a>
+                        <a href="delete.php?id=<?= $p['id_carro']; ?>" class="btn btn-danger">Deletar</a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
 </main>
 
 <?php
