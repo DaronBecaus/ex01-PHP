@@ -63,7 +63,7 @@ try {
                 <td><?= $p['marca']; ?></td>
                 <td><?= $p['modelo']; ?></td>
                 <td><?= $p['ano']; ?></td>
-                <td><img src="data:image/jpg;charset=utf8;base64, <?= base64_encode($p['imagem']); ?>" width="200px"></td>
+                <td><img src="data:image/png;charset=utf8;base64, <?= base64_encode($p['imagem']); ?>" width="200px"></td>
                 <td class="icon edit cont">
                     <a href="edite.php?id=<?= $p['id_carro']; ?>" style="color:blue;">Editar</a>
                 </td>

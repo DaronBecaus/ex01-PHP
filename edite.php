@@ -28,7 +28,7 @@ try {
         <label for="ano">Ano:</label>
         <input type="number" name="ano" id="ano" value="<?= $carro->ano; ?>">
         <label for="imagem">Selecione uma nova imagem:</label>
-        <img src="data:image/jpg;charset=utf8;base64, <?= base64_encode($carro->imagem); ?>" width="200px">
+        <img src="data:image/png;charset=utf8;base64, <?= base64_encode($carro->imagem); ?>" width="200px">
         <input type="file" name="imagem" id="imagem">
         <input type="submit" value="Atualizar">
     </form>
