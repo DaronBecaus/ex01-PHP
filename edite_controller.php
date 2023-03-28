@@ -16,7 +16,7 @@ try {
     $carro->marca = $marca;
     $carro->modelo = $modelo;
     $carro->ano = $ano;
-    $carros->info = $info;
+    $carro->info = $info;
     $carro->imagem = $imagem;
     $carro->update();
     header('location: index.php');
