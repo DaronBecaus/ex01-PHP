@@ -11,8 +11,8 @@ require_once "header.php" ?>
             <th>Imagem</th>
             <th colspan="2">
                 <button id="open-add">Adicionar Novo</button>
-                <div id="fade1" class="hide"></div>
-                <div id="modal1" class="hide">
+                <div id="fade" class="hide"></div>
+                <div id="modal" class="hide">
                     <div class="modal-header">
                         <h2>Adicione novos dados</h2>
                         <button id="close-add">Fechar</button>
@@ -49,31 +49,6 @@ require_once "header.php" ?>
             </tr>
         <?php endforeach; ?>
     </table>
-
-    <button id="open-edite">Editar</button>
-    <div id="fade2" class="hide"></div>
-    <div id="modal2" class="hide">
-        <div class="modal-header">
-            <h2>Edite od dados</h2>
-            <button id="close-edite">Fechar</button>
-        </div>
-        <div class="modal-body">
-            <form action="edite_controller.php?id=<?= $p['id_carro']; ?>" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="<?= $id_carro ?>">
-                <label for="marca">Marca:</label>
-                <input type="text" name="marca" id="marca" value="<?= $carro->marca; ?>">
-                <label for="modelo">Modelo:</label>
-                <input type="text" name="modelo" id="modelo" value="<?= $carro->modelo; ?>">
-                <label for="ano">Ano:</label>
-                <input type="number" name="ano" id="ano" value="<?= $carro->ano; ?>">
-                <label for="imagem">Selecione uma nova imagem:</label>
-                <img src="data:image/png;charset=utf8;base64, <?= base64_encode($carro->imagem); ?>" width="200px">
-                <input type="file" name="imagem" id="imagem">
-                <input type="submit" value="Atualizar">
-            </form>
-        </div>
-    </div>
-
 </main>
 
 <?php
