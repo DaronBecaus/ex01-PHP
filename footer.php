@@ -1,5 +1,5 @@
 <footer></footer>
-<script src="script.js"></script>
+<script src="js/scripts.js" defer></script>
 </body>
 
 </html>
