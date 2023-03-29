@@ -42,7 +42,6 @@ require_once "header.php" ?>
                 <td><img src="data:image/png;charset=utf8;base64, <?= base64_encode($p['imagem']); ?>" width="200px"></td>
                 <td class="icon edit cont">
                     <a href="edite.php?id=<?= $p['id_carro']; ?>">Editar</a>
-
                 </td>
                 <td class="icon delete cont">
                     <a href="delete.php?id=<?= $p['id_carro']; ?>" style="color:red;">Deletar</a>
