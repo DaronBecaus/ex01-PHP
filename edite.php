@@ -15,6 +15,7 @@ try {
             <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Carro</h1>
         </div>
         <div class="modal-body container">
+            <input type="hidden" value=" <?= $carro->$id_carro; ?>">
             <div class="mb-3">
                 <label for="marca" class="form-label">Marca:</label>
                 <input type="text" class="form-control" name="marca" id="marca" required value="<?= $carro->marca; ?>">
@@ -38,7 +39,7 @@ try {
                 </div>
                 <div class="img2">
                     <h5 for="imagem" class="form-label">Imagem Selecionada</h5>
-                    <img id="imagemSelecionada" src="#" alt="Imagem selecionada" width="200px">
+                    <img id="imagemSelecionada" alt="Imagem selecionada" width="200px">
                 </div>
             </div>
             <div class="mb-3">
@@ -47,12 +48,10 @@ try {
             </div>
         </div>
         <div class="meio">
-            <div class="button">
-                <button type="button" class="btn btn-danger"><a href="index.php" target="_self" style="text-decoration: none; color:white;">Fechar</a></button>
-            </div>
-            <div class="input">
-                <input type="submit" class="btn btn-primary" value="Atualizar">
-            </div>
+            <input type="submit" class="btn btn-primary" value="Atualizar">
         </div>
     </form>
 </body>
+
+<?php
+require_once "footer.php" ?>
