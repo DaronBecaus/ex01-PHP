@@ -1,5 +1,6 @@
 <?php
 require_once "carros.php";
+require_once "header.php";
 try {
     $id_carro = $_GET['id'];
     $carro = new Carros($id_carro);
@@ -8,32 +9,56 @@ try {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-Br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar</title>
-</head>
 
 <body>
     <form action="edite_controller.php" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<?= $id_carro ?>">
-        <label for="marca">Marca:</label>
-        <input type="text" name="marca" id="marca" value="<?= $carro->marca; ?>">
-        <label for="modelo">Modelo:</label>
-        <input type="text" name="modelo" id="modelo" value="<?= $carro->modelo; ?>">
-        <label for="ano">Ano:</label>
-        <input type="number" name="ano" id="ano" value="<?= $carro->ano; ?>">
-        <label for="imagem">Selecione uma nova imagem:</label>
-        <img src="data:image/wedp;charset=utf8;base64, <?= base64_encode($carro->imagem); ?>" width="200px">
-        <input type="file" name="imagem" id="imagem">
-        <label for="info">Escreva uma descrição do carro incerido</label>
-        <input type="text" name="info" id="info" value="<?= $carro->info; ?>">
-        <input type="submit" value="Atualizar">
+        <div class="titulo">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Carro</h1>
+        </div>
+        <div class="modal-body container">
+            <div class="mb-3">
+                <label for="marca" class="form-label">Marca:</label>
+                <input type="text" class="form-control" name="marca" id="marca" required value="<?= $carro->marca; ?>">
+            </div>
+            <div class="mb-3">
+                <label for="modelo" class="form-label">Modelo:</label>
+                <input type="text" class="form-control" name="modelo" id="modelo" required value="<?= $carro->modelo; ?>">
+            </div>
+            <div class="mb-3">
+                <label for="ano" class="form-label">Ano:</label>
+                <input type="number" class="form-control" name="ano" id="ano" required maxlength="4" value="<?= $carro->ano; ?>">
+            </div>
+            <div class="img">
+                <div class="img1">
+                    <h5 for="imagem" class="form-label">Imagem em Exibição</h5>
+                    <img src="data:image/wedp;charset=utf8;base64, <?= base64_encode($carro->imagem); ?>" width="200px">
+                </div>
+                <div class="mb-3">
+                    <label for="imagem" class="form-label">Selecione uma imagem:</label>
+                    <input class="form-control" type="file" name="imagem" id="imagem" accept="image/*">
+                </div>
+                <div class="img2">
+                    <h5 for="imagem" class="form-label">Imagem Selecionada</h5>
+                    <img id="imagemSelecionada" src="#" alt="Imagem selecionada" width="200px">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="info" class="form-label">Escreva uma descrição do carro incherido</label>
+                <textarea class="form-control" id="info" name="info" rows="6"><?= $carro->info; ?></textarea>
+            </div>
+        </div>
+        <div class="meio">
+            <div class="button">
+                <button type="button" class="btn btn-danger"><a href="index.php" target="_self" style="text-decoration: none; color:white;">Fechar</a></button>
+            </div>
+            <div class="input">
+                <input type="submit" class="btn btn-primary" value="Atualizar">
+            </div>
+        </div>
     </form>
 </body>
 
-</html>
+
+
+<?php
+require_once "footer.php" ?>

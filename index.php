@@ -19,24 +19,37 @@ require_once "header.php" ?>
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Adicionar Novo Carro</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
-                                    <label for="marca">Marca:</label>
-                                    <input type="text" name="marca" id="marca">
-                                    <label for="modelo">Modelo:</label>
-                                    <input type="text" name="modelo" id="modelo">
-                                    <label for="ano">Ano:</label>
-                                    <input type="number" name="ano" id="ano">
-                                    <label for="imagem">Selecione uma imagem:</label>
-                                    <input type="file" name="imagem" id="imagem" multiple>
-                                    <div id="preview"></div>
-                                    <label for="info">Escreva uma descrição do carro incherido</label>
-                                    <input type="text" name="info" id="info">
+                                <div class="modal-body container">
+                                    <div class="mb-3">
+                                        <label for="marca" class="form-label">Marca</label>
+                                        <input type="text" class="form-control" name="marca" id="marca" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="modelo" class="form-label">Modelo</label>
+                                        <input type="text" class="form-control" name="modelo" id="modelo" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="ano" class="form-label">Ano</label>
+                                        <input type="number" class="form-control" name="ano" id="ano" required maxlength="4">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="imagem" class="form-label">Selecione uma imagem:</label>
+                                        <input class="form-control" type="file" name="imagem" id="imagem" accept="image/*">
+                                    </div>
+                                    <div>
+                                        <h5 for="imagem" class="form-label">Imagem Selecionada</h5>
+                                        <img id="imagemSelecionada" src="#" alt="Imagem selecionada" width="200px">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="info" class="form-label">Escreva uma descrição do carro incherido</label>
+                                        <textarea class="form-control" id="info" name="info" rows="3"></textarea>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><a href="index.php" target="_parent" style="text-decoration: none; color:white;">Fechar</a></button>
                                     <button type="submit" class="btn btn-primary">Cadastrar Novo</button>
                                 </div>
                             </div>

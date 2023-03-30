@@ -9,7 +9,7 @@ require_once "header.php" ?>
                 <div class="card-body">
                     <h5 class="card-title"><?= $p['modelo']; ?></h5>
                     <p class="card-text">
-                        <td><?= $p['info']; ?></td>
+                        <?= $p['info']; ?>
                     </p>
                 </div>
             </div>

@@ -1,23 +1,15 @@
-var imagem = document.getElementById("imagem");
-var preview = document.getElementById("preview");
+const inputImagem = document.getElementById("imagem");
+const imagemSelecionada = document.getElementById("imagemSelecionada");
 
-imagem.addEventListener("change", function () {
-  preview.innerHTML = "";
-  var files = this.files;
+inputImagem.addEventListener("change", function () {
+  const arquivo = this.files[0];
+  const leitor = new FileReader();
 
-  for (var i = 0; i < files.length; i++) {
-    var file = files[i];
+  leitor.addEventListener("load", function () {
+    imagemSelecionada.setAttribute("src", this.result);
+  });
 
-    if (file.type.match("image.*")) {
-      var reader = new FileReader();
-
-      reader.addEventListener("load", function (event) {
-        var img = document.createElement("img");
-        img.src = event.target.result;
-        preview.appendChild(img).style.scale = "0.5";
-      });
-
-      reader.readAsDataURL(file);
-    }
+  if (arquivo) {
+    leitor.readAsDataURL(arquivo);
   }
 });
