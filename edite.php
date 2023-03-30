@@ -9,7 +9,6 @@ try {
 }
 ?>
 
-
 <body>
     <form action="edite_controller.php" method="post" enctype="multipart/form-data">
         <div class="titulo">
@@ -57,8 +56,3 @@ try {
         </div>
     </form>
 </body>
-
-
-
-<?php
-require_once "footer.php" ?>
