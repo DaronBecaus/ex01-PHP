@@ -15,7 +15,7 @@ try {
             <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Carro</h1>
         </div>
         <div class="modal-body container">
-            <input type="hidden" value=" <?= $carro->$id_carro; ?>">
+            <input type="hidden" name="id" value="<?= $id_carro ?>">
             <div class="mb-3">
                 <label for="marca" class="form-label">Marca:</label>
                 <input type="text" class="form-control" name="marca" id="marca" required value="<?= $carro->marca; ?>">

@@ -1,7 +1,7 @@
 <?php
 require_once "header.php" ?>
 
-<div class="row row-cols-1 row-cols-md-2 g-4">
+<div class="row row-cols-1 row-cols-md-2 g-4" style="width: 100%;">
     <?php foreach ($list as $p) : ?>
         <div class="col">
             <div class="card">
